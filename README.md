@@ -20,7 +20,7 @@ The MySQL database runs on **Amazon RDS** inside dedicated private database subn
 
 ## Architecture
 
-![AWS Highly Available Application Architecture](diagram/architecture.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/diagram/Highly-available-app-%20architectural-diagram.png)
 
 ### Architecture Flow
 
@@ -163,11 +163,8 @@ This confirmed that the EC2 instances could be securely administered while remai
 
 **Screenshot:**
 
-Place:
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/ssm-private-servers.png)
 
-```text
-screenshots/09-ssm-private-server.png
-```
 
 ---
 
@@ -196,8 +193,10 @@ Server: APP-SERVER-1
 Availability Zone: us-east-1a
 Instance ID: i-xxxxxxxx
 ```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/app-alb-server1-deployed-application.png)
 
 The second server displays its own server identity.
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/app-alb-server2-deployed-application.png)
 
 ---
 
@@ -220,12 +219,7 @@ Only healthy EC2 instances receive traffic.
 Both application servers were verified as healthy targets.
 
 **Screenshot:**
-
-Place:
-
-```text
-screenshots/06-target-group-healthy.png
-```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/target-group.png)
 
 ---
 
@@ -248,12 +242,7 @@ Database Name: appdb
 The database security group only permits MySQL traffic from the application-server security group.
 
 **Screenshot:**
-
-Place:
-
-```text
-screenshots/08-rds-database.png
-```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/rds-database.png)
 
 ---
 
@@ -278,12 +267,7 @@ Private RDS MySQL
 ```
 
 **Screenshot:**
-
-Place:
-
-```text
-screenshots/10-ec2-to-rds-connectivity.png
-```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/ec2-rds-connectivity.png)
 
 > The database password is intentionally not included in this repository.
 
@@ -300,22 +284,20 @@ For example:
 ```text
 Server: APP-SERVER-1
 ```
+**screenshot**
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/app-alb-server1-deployed-application.png)
 
 and:
 
 ```text
 Server: APP-SERVER-2
 ```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/app-alb-server2-deployed-application.png)
 
 Refreshing the ALB endpoint can result in responses from either healthy backend.
 
 **Screenshot:**
-
-Place:
-
-```text
-screenshots/11-load-balancer-two-servers.png
-```
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/load-balancer-two-servers.png)
 
 ---
 
@@ -391,67 +373,43 @@ aws-highly-available-app/
 
 Shows the deployed VPC and its network configuration.
 
-![VPC](screenshots/01-vpc-created.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/vpc-created-dashboard.png)
 
 ### 2. Subnets
 
 Shows the public, private application, and private database subnets.
 
-![VPC Subnets](screenshots/02-vpc-subnets.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/all-vpc-subnets.png)
 
 ### 3. Security Groups
 
 Shows the security groups controlling communication between the ALB, EC2, and RDS tiers.
 
-![Security Groups](screenshots/03-security-groups.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/security-groups.png)
 
 ### 4. EC2 Application Servers
 
 Shows the two private EC2 application servers.
 
-![EC2 Application Servers](screenshots/04-ec2-application-servers.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/ec2-application-servers.png)
 
 ### 5. Application Load Balancer
 
 Shows the deployed internet-facing Application Load Balancer.
 
-![Application Load Balancer](screenshots/05-application-load-balancer.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/load-balancer.png)
 
-### 6. Healthy Targets
-
-Shows both EC2 instances registered as healthy targets.
-
-![Healthy Targets](screenshots/06-target-group-healthy.png)
-
-### 7. Deployed Application
+### 6. Deployed Application
 
 Shows the web application being served through the ALB.
 
-![Deployed Application](screenshots/07-deployed-application.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/app-alb-server2-deployed-application.png)
 
-### 8. RDS Database
-
-Shows the private MySQL RDS database.
-
-![RDS Database](screenshots/08-rds-database.png)
-
-### 9. Systems Manager Session
+### 7. Systems Manager Session
 
 Shows secure access to a private EC2 instance through Session Manager.
 
-![SSM Session](screenshots/09-ssm-private-server.png)
-
-### 10. EC2 → RDS Connectivity
-
-Shows successful connectivity from the private application server to RDS over port 3306.
-
-![EC2 to RDS](screenshots/10-ec2-to-rds-connectivity.png)
-
-### 11. Load Balancer Backend Verification
-
-Shows the application responding through the ALB and identifying the backend server.
-
-![Load Balancer Verification](screenshots/11-load-balancer-two-servers.png)
+![image alt](https://github.com/endurancecoding/aws-highly-available-app/blob/cff119363a616a301883ccfc18ad139eeaa97c2c/screenshots/ssm-private-servers.png)
 
 ---
 
